@@ -1,11 +1,48 @@
-# Recuperação de Senha
+# gobarber-backend
+<p>Versão final do Backend da aplicação Gobarber com todas as funcionalidades implementadas.  </p>
 
-**RF**
+<h3>Sobre : </h3>
+<p>Gobarber é uma aplicação que oferece agendamento de horário para prestadores de serviço de barbearia . </p>
+
+<p>Tecnologias : </p>
+<ul>
+  <li>Typescript </li>
+<li>NodeJS</li>
+<li>Express</li>
+<li>Cors</li>
+<li>Postgres</li>
+<li>MongoDB</li>
+<li>Redis</li>
+<li>Bcrypt</li>
+<li>JSON WEB Token</li>
+<li>Celebrate</li>
+<li>Jest ( tests)</li>
+<li>Rate Limiter</li>
+<li>Ethereal</li>
+<li>AWS S3</li>
+</ul>
+
+<h3>Requisitos de instalação </h3>
+  <ul>
+  <li> Instalar um gerenciador de pacotes  (NPM / Yarn) 
+     </li>
+  </li>
+  <li> Instalar o Banco de dados Postgres, MongoDB e Redis <br>
+<i>Obs :  Verifique os dados do arquivo ormconfig.json antes de executar o instalador do Banco de dados Postgres e MongoDB </i></li>
+  <li> Instalar o Insomnia / Postman
+ </ul>
+
+
+# Features :
+
+## Recuperação de Senha
+
+**RF - Requisitos Funcionais**
 - O usuário deve poder recuperar sua senha informando o seu e-mail;
 - O usuário deve receber um e-mail com instruções de recuperação de senha;
 - O usuário deve poder resetar sua senha;
 
-**RNF**
+**RNF - Requisitos Não Funcionais**
 - Utilizar MailTrap para testar envios em ambiente de dev;
 - Utilizar AMAZON SES para envios em produção;
 - O envio de e-mails deve acontecer em segundo plano (background job)
@@ -14,19 +51,19 @@
 - O link enviado por email para resetar senha, deve expirar em 2h;
 - O usuário precisa confirmar a nova senha(Inserir nova senha) ao resetar sua senha;
 
-# Atualização do Perfil
+## Atualização do Perfil
 
 **RF**
 - O usuário deve poder atualizar seu nome, email e senha;
 
 
-**RN - Regra de Negócio**
+**RN**
 - O usuário não pode alterar seu email para um e-mail já utilizado;
 - Para atualizar sua senha , o usuário deve informar a senha antiga;
 - Para atualizar sua senha, o usuário precisa confirmar a senha;
 
 
-# Painel do Prestador
+## Painel do Prestador
 
 **RF**
 - O usuário deve poder listar seus agendamentos de um dia específico
@@ -43,7 +80,7 @@
 - A notificação deve ter um status de lida ou não-lida para que o prestador possa controlar;
 
 
-# Agendamento de Serviços
+## Agendamento de Serviços
 
 **RF**
 
@@ -63,5 +100,4 @@
 - Os agendamentos devem estar disponíveis entre 8h às 18h ( Primeiro horário às 8h , último às 17h)
 - O usuário não pode agendar em um horário já ocupado;
 - O usuário não pode agendar em um horário que já passou( Horário de ontem);
-- O usuário não pode agendar serviços dele mesmo( consigo mesmo(Cabelereiro cortanto o seu proprio cabelo))
-
+- O usuário não pode agendar serviços dele mesmo( consigo mesmo)
